@@ -1,0 +1,12 @@
+/Users/stevenmiyauchi/CSharp/assignments/Loops/obj/Debug/netcoreapp3.1/Loops.csprojAssemblyReference.cache
+/Users/stevenmiyauchi/CSharp/assignments/Loops/obj/Debug/netcoreapp3.1/Loops.AssemblyInfoInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/Loops/obj/Debug/netcoreapp3.1/Loops.AssemblyInfo.cs
+/Users/stevenmiyauchi/CSharp/assignments/Loops/obj/Debug/netcoreapp3.1/Loops.csproj.CoreCompileInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/Loops/bin/Debug/netcoreapp3.1/Loops.deps.json
+/Users/stevenmiyauchi/CSharp/assignments/Loops/bin/Debug/netcoreapp3.1/Loops.runtimeconfig.json
+/Users/stevenmiyauchi/CSharp/assignments/Loops/bin/Debug/netcoreapp3.1/Loops.runtimeconfig.dev.json
+/Users/stevenmiyauchi/CSharp/assignments/Loops/bin/Debug/netcoreapp3.1/Loops.dll
+/Users/stevenmiyauchi/CSharp/assignments/Loops/bin/Debug/netcoreapp3.1/Loops.pdb
+/Users/stevenmiyauchi/CSharp/assignments/Loops/obj/Debug/netcoreapp3.1/Loops.dll
+/Users/stevenmiyauchi/CSharp/assignments/Loops/obj/Debug/netcoreapp3.1/Loops.pdb
+/Users/stevenmiyauchi/CSharp/assignments/Loops/obj/Debug/netcoreapp3.1/Loops.genruntimeconfig.cache
