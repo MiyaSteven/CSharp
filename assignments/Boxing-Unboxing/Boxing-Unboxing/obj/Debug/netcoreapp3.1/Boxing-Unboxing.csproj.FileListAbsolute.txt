@@ -1,0 +1,12 @@
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/bin/Debug/netcoreapp3.1/Boxing-Unboxing.deps.json
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/bin/Debug/netcoreapp3.1/Boxing-Unboxing.runtimeconfig.json
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/bin/Debug/netcoreapp3.1/Boxing-Unboxing.runtimeconfig.dev.json
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/bin/Debug/netcoreapp3.1/Boxing-Unboxing.dll
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/bin/Debug/netcoreapp3.1/Boxing-Unboxing.pdb
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/obj/Debug/netcoreapp3.1/Boxing-Unboxing.csprojAssemblyReference.cache
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/obj/Debug/netcoreapp3.1/Boxing-Unboxing.AssemblyInfoInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/obj/Debug/netcoreapp3.1/Boxing-Unboxing.AssemblyInfo.cs
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/obj/Debug/netcoreapp3.1/Boxing-Unboxing.csproj.CoreCompileInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/obj/Debug/netcoreapp3.1/Boxing-Unboxing.dll
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/obj/Debug/netcoreapp3.1/Boxing-Unboxing.pdb
+/Users/stevenmiyauchi/CSharp/assignments/Boxing-Unboxing/Boxing-Unboxing/obj/Debug/netcoreapp3.1/Boxing-Unboxing.genruntimeconfig.cache
