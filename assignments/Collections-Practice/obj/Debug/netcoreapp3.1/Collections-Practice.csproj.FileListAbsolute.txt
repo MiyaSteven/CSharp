@@ -1,0 +1,12 @@
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/bin/Debug/netcoreapp3.1/Collections-Practice.deps.json
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/bin/Debug/netcoreapp3.1/Collections-Practice.runtimeconfig.json
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/bin/Debug/netcoreapp3.1/Collections-Practice.runtimeconfig.dev.json
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/bin/Debug/netcoreapp3.1/Collections-Practice.dll
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/bin/Debug/netcoreapp3.1/Collections-Practice.pdb
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/obj/Debug/netcoreapp3.1/Collections-Practice.csprojAssemblyReference.cache
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/obj/Debug/netcoreapp3.1/Collections-Practice.AssemblyInfoInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/obj/Debug/netcoreapp3.1/Collections-Practice.AssemblyInfo.cs
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/obj/Debug/netcoreapp3.1/Collections-Practice.csproj.CoreCompileInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/obj/Debug/netcoreapp3.1/Collections-Practice.dll
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/obj/Debug/netcoreapp3.1/Collections-Practice.pdb
+/Users/stevenmiyauchi/CSharp/assignments/Collections-Practice/obj/Debug/netcoreapp3.1/Collections-Practice.genruntimeconfig.cache
