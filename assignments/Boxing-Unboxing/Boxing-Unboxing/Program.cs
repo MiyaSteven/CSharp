@@ -7,21 +7,26 @@ namespace Boxing_Unboxing
     {
         static void Main(string[] args)
         {
-            List<object> myList = new List<object> { "Hello”", "goodbye", 'x', true };
-            int sum = 0;
-            foreach (object num in myList)
+            List<object> myList = new List<object>();
+            myList.Add(7);
+            myList.Add(28);
+            myList.Add(-1);
+            myList.Add(true);
+            myList.Add("chair");
+
+            foreach (object item in myList)
             {
-                string message = "There is no message to print.";
-                if (num is int)
+                Console.WriteLine(item);
+            }
+            int sum = 0;
+            foreach (object item in myList)
+            {
+                if (item is int)
                 {
-                    sum += (int)num;
-                }
-                else if (num is string)
-                {
-                    string message = (string)num;
+                    sum = sum + (int)item;
                 }
             }
-            System.Console.WriteLine("The sum of all numbers in");
+            Console.WriteLine(sum);
         }
     }
 }
