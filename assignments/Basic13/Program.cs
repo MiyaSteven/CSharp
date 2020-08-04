@@ -9,10 +9,10 @@ namespace Basic13
             PrintNumbers();
             PrintOdds();
             PrintSum();
-            int[] testNums = { 2, 10, 3 };
+            int[] testNums = { -3, -5, -7 };
             LoopArray(testNums);
             FindMax(testNums);
-            GetAverage(testNums);
+            GetAverage();
             // OddArray();
             // GreaterThanY();
             // SquareArrayValues();
@@ -81,17 +81,20 @@ namespace Basic13
             // Your program should also work with a given array that has all negative numbers (e.g. [-3, -5, -7]), 
             // or even a mix of positive numbers, negative numbers and zero.
         }
-        public static void GetAverage(int[] numbers)
+        public static void GetAverage()
         {
-            int sum = 0;
-            double avg = 0;
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                sum += numbers[i];
-                System.Console.WriteLine("This is the " + sum);
-            }
-            avg = (double)sum / (double)numbers.Length;
-            System.Console.WriteLine(avg);
+            int[] numberArray = { 2, 10, 3 };
+
+            // int sum = 0;
+            // double avg = 0;
+
+            // for (int i = 0; i < numbers.Length; i++)
+            // {
+            //     sum += numbers[i];
+            //     System.Console.WriteLine("This is the accumulator" + sum);
+            // }
+            // avg = (double)sum / (double)numbers.Length;
+            // System.Console.WriteLine(avg);
             // Write a function that takes an integer array and prints the AVERAGE of the values in the array.
             // For example, with an array [2, 10, 3], your program should write 5 to the console.
         }
