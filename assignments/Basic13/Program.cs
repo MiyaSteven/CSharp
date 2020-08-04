@@ -113,9 +113,9 @@ namespace Basic13
             // Write a function that creates, and then returns, an array that contains all the odd numbers between 1 to 255. 
             // When the program is done, this array should have the values of [1, 3, 5, 7, ... 255].cop
         }
-        public static int GreaterThanY(int[] numbers, int y)
-        {
-        }
+        // public static int GreaterThanY(int[] numbers, int y)
+        // {
+        // }
         // Write a function that takes an integer array, and a integer "y" and returns the number of array values 
         // That are greater than the "y" value. 
         // For example, if array = [1, 3, 5, 7] and y = 3. Your function should return 2 
