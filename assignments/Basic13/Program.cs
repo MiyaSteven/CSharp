@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 
 namespace Basic13
 {
@@ -9,12 +11,13 @@ namespace Basic13
             PrintNumbers();
             PrintOdds();
             PrintSum();
-            int[] testNums = { -3, -5, -7 };
+            int[] testNums = { -3, -5, -7, 3 };
             LoopArray(testNums);
             FindMax(testNums);
             GetAverage();
-            // OddArray();
-            // GreaterThanY();
+            OddArray();
+            int[] numbers = { 1, 3, 5, 6, 2 };
+            GreaterThanY(numbers);
             // SquareArrayValues();
             // EliminateNegatives();
             // MinMaxAverage();
@@ -62,7 +65,7 @@ namespace Basic13
             // print each value to the console. 
             foreach (int num in numbers)
             {
-                System.Console.WriteLine(num);
+                System.Console.WriteLine("Loop Array " + num);
             }
         }
         public static int FindMax(int[] numbers)
@@ -75,70 +78,77 @@ namespace Basic13
                     max = num;
                 }
             }
-            System.Console.WriteLine(max);
+            System.Console.WriteLine("This is the max " + max);
             return max;
-            // Write a function that takes an integer array and prints and returns the maximum value in the array. 
-            // Your program should also work with a given array that has all negative numbers (e.g. [-3, -5, -7]), 
-            // or even a mix of positive numbers, negative numbers and zero.
         }
         public static void GetAverage()
         {
             int[] numberArray = { 2, 10, 3 };
 
-            // int sum = 0;
-            // double avg = 0;
+            int sum = 0;
+            double avg = 0;
 
-            // for (int i = 0; i < numbers.Length; i++)
-            // {
-            //     sum += numbers[i];
-            //     System.Console.WriteLine("This is the accumulator" + sum);
-            // }
-            // avg = (double)sum / (double)numbers.Length;
-            // System.Console.WriteLine(avg);
-            // Write a function that takes an integer array and prints the AVERAGE of the values in the array.
-            // For example, with an array [2, 10, 3], your program should write 5 to the console.
+            for (int i = 0; i < numberArray.Length; i++)
+            {
+                sum += numberArray[i];
+                System.Console.WriteLine("This is the accumulator " + sum);
+            }
+            avg = (double)sum / (double)numberArray.Length;
+            System.Console.WriteLine("This is the average " + avg);
         }
 
-        // public static int[] OddArray()
-        // {
-        //     // Write a function that creates, and then returns, an array that contains all the odd numbers between 1 to 255. 
-        //     // When the program is done, this array should have the values of [1, 3, 5, 7, ... 255].cop
-        // }
-        // public static int GreaterThanY(int[] numbers, int y)
-        // {
-        //     // Write a function that takes an integer array, and a integer "y" and returns the number of array values 
-        //     // That are greater than the "y" value. 
-        //     // For example, if array = [1, 3, 5, 7] and y = 3. Your function should return 2 
-        //     // (since there are two values in the array that are greater than 3).
+        public static int[] OddArray()
+        {
+            int[] newArray = new int[(255 + 1) / 2];
+
+
+
+            for (int i = 0; i < newArray.Length; i++)
+            {
+                newArray[i] = i * 2 + 1;
+                Console.WriteLine(newArray[i]);
+            }
+            // Array.ForEach(newArray, Console.WriteLine);
+            return newArray;
+            // Write a function that creates, and then returns, an array that contains all the odd numbers between 1 to 255. 
+            // When the program is done, this array should have the values of [1, 3, 5, 7, ... 255].cop
+        }
+        public static int GreaterThanY(int[] numbers, int y)
+        {
+        }
+        // Write a function that takes an integer array, and a integer "y" and returns the number of array values 
+        // That are greater than the "y" value. 
+        // For example, if array = [1, 3, 5, 7] and y = 3. Your function should return 2 
+        // (since there are two values in the array that are greater than 3).
         // }
         // public static void SquareArrayValues(int[] numbers)
         // {
-        //     // Write a function that takes an integer array "numbers", and then multiplies each value by itself.
-        //     // For example, [1,5,10,-10] should become [1,25,100,100]
+        // Write a function that takes an integer array "numbers", and then multiplies each value by itself.
+        // For example, [1,5,10,-10] should become [1,25,100,100]
         // }
         // public static void EliminateNegatives(int[] numbers)
         // {
-        //     // Given an integer array "numbers", say [1, 5, 10, -2], create a function that replaces any negative number with the value of 0. 
-        //     // When the program is done, "numbers" should have no negative values, say [1, 5, 10, 0].
+        // Given an integer array "numbers", say [1, 5, 10, -2], create a function that replaces any negative number with the value of 0. 
+        // When the program is done, "numbers" should have no negative values, say [1, 5, 10, 0].
         // }
         // public static void MinMaxAverage(int[] numbers)
         // {
-        //     // Given an integer array, say [1, 5, 10, -2], create a function that prints the maximum number in the array, 
-        //     // the minimum value in the array, and the average of the values in the array.
+        // Given an integer array, say [1, 5, 10, -2], create a function that prints the maximum number in the array, 
+        // the minimum value in the array, and the average of the values in the array.
         // }
         // public static void ShiftValues(int[] numbers)
         // {
-        //     // Given an integer array, say [1, 5, 10, 7, -2], 
-        //     // Write a function that shifts each number by one to the front and adds '0' to the end. 
-        //     // For example, when the program is done, if the array [1, 5, 10, 7, -2] is passed to the function, 
-        //     // it should become [5, 10, 7, -2, 0].
+        // Given an integer array, say [1, 5, 10, 7, -2], 
+        // Write a function that shifts each number by one to the front and adds '0' to the end. 
+        // For example, when the program is done, if the array [1, 5, 10, 7, -2] is passed to the function, 
+        // it should become [5, 10, 7, -2, 0].
         // }
         // public static object[] NumToString(int[] numbers)
         // {
-        //     // Write a function that takes an integer array and returns an object array 
-        //     // that replaces any negative number with the string 'Dojo'.
-        //     // For example, if array "numbers" is initially [-1, -3, 2] 
-        //     // your function should return an array with values ['Dojo', 'Dojo', 2].
+        // Write a function that takes an integer array and returns an object array 
+        // that replaces any negative number with the string 'Dojo'.
+        // For example, if array "numbers" is initially [-1, -3, 2] 
+        // your function should return an array with values ['Dojo', 'Dojo', 2].
         // }
 
     }
