@@ -1,0 +1,12 @@
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/obj/Debug/netcoreapp3.1/Basic13.csprojAssemblyReference.cache
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/obj/Debug/netcoreapp3.1/Basic13.AssemblyInfoInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/obj/Debug/netcoreapp3.1/Basic13.AssemblyInfo.cs
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/obj/Debug/netcoreapp3.1/Basic13.csproj.CoreCompileInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/bin/Debug/netcoreapp3.1/Basic13.deps.json
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/bin/Debug/netcoreapp3.1/Basic13.runtimeconfig.json
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/bin/Debug/netcoreapp3.1/Basic13.runtimeconfig.dev.json
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/bin/Debug/netcoreapp3.1/Basic13.dll
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/bin/Debug/netcoreapp3.1/Basic13.pdb
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/obj/Debug/netcoreapp3.1/Basic13.dll
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/obj/Debug/netcoreapp3.1/Basic13.pdb
+/Users/stevenmiyauchi/CSharp/assignments/Basic13/obj/Debug/netcoreapp3.1/Basic13.genruntimeconfig.cache
