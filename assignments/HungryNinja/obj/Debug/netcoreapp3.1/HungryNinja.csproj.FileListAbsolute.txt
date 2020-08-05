@@ -1,0 +1,12 @@
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/obj/Debug/netcoreapp3.1/HungryNinja.csprojAssemblyReference.cache
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/obj/Debug/netcoreapp3.1/HungryNinja.AssemblyInfoInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/obj/Debug/netcoreapp3.1/HungryNinja.AssemblyInfo.cs
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/obj/Debug/netcoreapp3.1/HungryNinja.csproj.CoreCompileInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/bin/Debug/netcoreapp3.1/HungryNinja.deps.json
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/bin/Debug/netcoreapp3.1/HungryNinja.runtimeconfig.json
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/bin/Debug/netcoreapp3.1/HungryNinja.runtimeconfig.dev.json
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/bin/Debug/netcoreapp3.1/HungryNinja.dll
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/bin/Debug/netcoreapp3.1/HungryNinja.pdb
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/obj/Debug/netcoreapp3.1/HungryNinja.dll
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/obj/Debug/netcoreapp3.1/HungryNinja.pdb
+/Users/stevenmiyauchi/CSharp/assignments/HungryNinja/obj/Debug/netcoreapp3.1/HungryNinja.genruntimeconfig.cache
