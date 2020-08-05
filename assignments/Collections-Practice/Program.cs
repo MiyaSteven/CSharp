@@ -33,6 +33,5 @@ namespace Collections_Practice
                 System.Console.WriteLine(entry.Key + " loves " + entry.Value);
             }
         }
-
     }
 }
