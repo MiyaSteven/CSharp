@@ -1,0 +1,12 @@
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/bin/Debug/netcoreapp3.1/DeckOfCards.deps.json
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/bin/Debug/netcoreapp3.1/DeckOfCards.runtimeconfig.json
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/bin/Debug/netcoreapp3.1/DeckOfCards.runtimeconfig.dev.json
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/bin/Debug/netcoreapp3.1/DeckOfCards.dll
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/bin/Debug/netcoreapp3.1/DeckOfCards.pdb
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/obj/Debug/netcoreapp3.1/DeckOfCards.csprojAssemblyReference.cache
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/obj/Debug/netcoreapp3.1/DeckOfCards.AssemblyInfoInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/obj/Debug/netcoreapp3.1/DeckOfCards.AssemblyInfo.cs
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/obj/Debug/netcoreapp3.1/DeckOfCards.csproj.CoreCompileInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/obj/Debug/netcoreapp3.1/DeckOfCards.dll
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/obj/Debug/netcoreapp3.1/DeckOfCards.pdb
+/Users/stevenmiyauchi/CSharp/assignments/DeckOfCards/obj/Debug/netcoreapp3.1/DeckOfCards.genruntimeconfig.cache
