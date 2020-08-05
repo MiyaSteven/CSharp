@@ -1,0 +1,12 @@
+/Users/stevenmiyauchi/CSharp/assignments/Characters/bin/Debug/netcoreapp3.1/Characters.deps.json
+/Users/stevenmiyauchi/CSharp/assignments/Characters/bin/Debug/netcoreapp3.1/Characters.runtimeconfig.json
+/Users/stevenmiyauchi/CSharp/assignments/Characters/bin/Debug/netcoreapp3.1/Characters.runtimeconfig.dev.json
+/Users/stevenmiyauchi/CSharp/assignments/Characters/bin/Debug/netcoreapp3.1/Characters.dll
+/Users/stevenmiyauchi/CSharp/assignments/Characters/bin/Debug/netcoreapp3.1/Characters.pdb
+/Users/stevenmiyauchi/CSharp/assignments/Characters/obj/Debug/netcoreapp3.1/Characters.csprojAssemblyReference.cache
+/Users/stevenmiyauchi/CSharp/assignments/Characters/obj/Debug/netcoreapp3.1/Characters.AssemblyInfoInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/Characters/obj/Debug/netcoreapp3.1/Characters.AssemblyInfo.cs
+/Users/stevenmiyauchi/CSharp/assignments/Characters/obj/Debug/netcoreapp3.1/Characters.csproj.CoreCompileInputs.cache
+/Users/stevenmiyauchi/CSharp/assignments/Characters/obj/Debug/netcoreapp3.1/Characters.dll
+/Users/stevenmiyauchi/CSharp/assignments/Characters/obj/Debug/netcoreapp3.1/Characters.pdb
+/Users/stevenmiyauchi/CSharp/assignments/Characters/obj/Debug/netcoreapp3.1/Characters.genruntimeconfig.cache
