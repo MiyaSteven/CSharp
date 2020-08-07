@@ -14,7 +14,6 @@ namespace Characters
         public int Health
         {
             get { return health; }
-            // set { return target.Attack(); }
         }
 
         public Human(string name)

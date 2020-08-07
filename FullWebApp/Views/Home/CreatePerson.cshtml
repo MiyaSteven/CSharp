@@ -1,0 +1,36 @@
+@model FullWebApp.Models.Person
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="/">Home</a>
+        <a href="/game/people/create">Create New Character</a>
+        <a href="/game/event/quest/create">Create New Quest</a>
+    </div>
+    <h1>Create Your Person!</h1>
+    <form asp-action="PersonSubmission" asp-controller="Home" method="post">
+        <span asp-validation-for="Name"></span>
+        <label asp-for="Name"></label>
+        <input asp-for="Name">
+        <br>
+        <span asp-validation-for="Location"></span>
+        <label asp-for="Location"></label>
+        <input asp-for="Location">
+        <br>
+        <span asp-validation-for="Skills"></span>
+        <label asp-for="Skills"></label>
+        <input asp-for="Skills">
+        <br>
+        <span asp-validation-for="TotalExperience"></span>
+        <label asp-for="TotalExperience"></label>
+        <input asp-for="TotalExperience">
+        <br>
+        <input type="submit" value="Submit Person">
+    </form>
+</body>
+</html>
