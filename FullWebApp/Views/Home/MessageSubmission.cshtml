@@ -1,4 +1,4 @@
-@model FullWebApp.Models.Person
+@model FullWebApp.Models.MessageForm
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,13 +13,7 @@
         <a href="/game/people/create">Create New Character</a>
         <a href="/game/people/message/create">Create New Message</a>
     </div>
-    <h1>Welcome, @Model.Name</h1>
-    <p>You're from @Model.Location</p>
-    <p>Your Skill level is: @Model.Skills</p>
-    <p>Your Total Experience is @Model.TotalExperience</p>
-    <h2>List of All People</h2>
-    <ol>
-        <li>@Model.Name</li>
-    </ol>
+    <h1>Congrats, @Model.Name</h1>
+    <p>You Sent @Model.Message</p>
 </body>
 </html>

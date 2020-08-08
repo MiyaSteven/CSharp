@@ -8,7 +8,7 @@ namespace FullWebApp.Controllers
     public class HomeController : Controller
     {
 
-        // route to home page
+        // get route to Home Page
         [HttpGet]
         [Route("")]
         public IActionResult Index()
@@ -16,21 +16,22 @@ namespace FullWebApp.Controllers
             Person firstPerson = new Person();
             firstPerson.Name = "Knight";
             firstPerson.Location = "Castle";
+            firstPerson.Email = "email@email.com";
             firstPerson.Skills = 9000;
             firstPerson.TotalExperience = 1000000;
 
             return View("Index", firstPerson);
         }
 
-        // route to create a person
+        // get route to create Person Form
         [HttpGet("/game/people/create")]
         public ViewResult CreatePerson()
         {
             return View("CreatePerson");
         }
 
-        // post route for creating people
-        [HttpPost("/game/people/create/success")]
+        // post route to display Person created
+        [HttpPost("/game/people/success")]
         public ViewResult PersonSubmission(Person FromForm)
         {
             if (ModelState.IsValid)
@@ -40,6 +41,27 @@ namespace FullWebApp.Controllers
             else
             {
                 return CreatePerson();
+            }
+        }
+
+        // get route to create a Message Form
+        [HttpGet("/game/people/message/create")]
+        public ViewResult CreateMessage()
+        {
+            return View("CreateMessage");
+        }
+
+        // post route to display Message created
+        [HttpPost("/game/people/message/success")]
+        public ViewResult MessageSubmission(MessageForm FromForm)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("MessageSubmission", FromForm);
+            }
+            else
+            {
+                return CreateMessage();
             }
         }
     }

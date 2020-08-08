@@ -17,6 +17,10 @@ namespace FullWebApp.Models
         [Display(Name = "Location: ")]
         public string Location { get; set; }
 
+        [Required(ErrorMessage = "Required Field")]
+        [Display(Name = "Email: ")]
+        public string Email { get; set; }
+
         [Required]
         [Range(1, Double.PositiveInfinity)]
         [Display(Name = "Skills: ")]
@@ -24,13 +28,5 @@ namespace FullWebApp.Models
 
         [Display(Name = "Total Exp: ")]
         public int TotalExperience { get; set; }
-
-        public Person()
-        {
-            Name = Name;
-            Location = "The Void";
-            Skills = 1;
-            TotalExperience = 0;
-        }
     }
 }
