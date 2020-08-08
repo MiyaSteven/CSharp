@@ -1,5 +1,4 @@
 @model FullWebApp.Models.Person
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +13,7 @@
         <a href="/game/people/message/create">Create New Message</a>
     </div>
     <h1>Welcome to My Site, @Model.Name from @Model.Location</h1>
-    <h3>Due to your skill level of @Model.Skills, you are permitted to access level 3</h3>
+    <h3>With your skill level of @Model.Skills, you are permitted to access level 3</h3>
+    <p>Today is @DateTime.Now</p>
 </body>
 </html>

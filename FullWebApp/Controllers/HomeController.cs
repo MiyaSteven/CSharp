@@ -7,11 +7,11 @@ namespace FullWebApp.Controllers
 {
     public class HomeController : Controller
     {
-
         // get route to Home Page
         [HttpGet]
         [Route("")]
         public IActionResult Index()
+
         {
             Person firstPerson = new Person();
             firstPerson.Name = "Knight";
@@ -48,7 +48,9 @@ namespace FullWebApp.Controllers
         [HttpGet("/game/people/message/create")]
         public ViewResult CreateMessage()
         {
-            return View("CreateMessage");
+            DateTime currentTime = DateTime.Now;
+
+            return View("CreateMessage", currentTime);
         }
 
         // post route to display Message created
