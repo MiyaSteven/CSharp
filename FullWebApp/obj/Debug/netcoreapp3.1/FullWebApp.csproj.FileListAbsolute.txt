@@ -28,8 +28,9 @@
 /Users/stevenmiyauchi/CSharp/FullWebApp/obj/Debug/netcoreapp3.1/FullWebApp.pdb
 /Users/stevenmiyauchi/CSharp/FullWebApp/obj/Debug/netcoreapp3.1/FullWebApp.genruntimeconfig.cache
 /Users/stevenmiyauchi/CSharp/FullWebApp/obj/Debug/netcoreapp3.1/FullWebApp.csproj.CopyComplete
-/Users/stevenmiyauchi/CSharp/FullWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/CreateQuest.cshtml.g.cs
 /Users/stevenmiyauchi/CSharp/FullWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/QuestList.cshtml.g.cs
 /Users/stevenmiyauchi/CSharp/FullWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/CreatePerson.cshtml.g.cs
 /Users/stevenmiyauchi/CSharp/FullWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/PersonSubmission.cshtml.g.cs
 /Users/stevenmiyauchi/CSharp/FullWebApp/obj/Debug/netcoreapp3.1/Razor/Views/_ViewImports.cshtml.g.cs
+/Users/stevenmiyauchi/CSharp/FullWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/CreateMessage.cshtml.g.cs
+/Users/stevenmiyauchi/CSharp/FullWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/MessageSubmission.cshtml.g.cs

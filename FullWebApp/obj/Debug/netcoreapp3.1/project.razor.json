@@ -20526,8 +20526,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/stevenmiyauchi/CSharp/FullWebApp/Views/Home/CreateQuest.cshtml",
-      "TargetPath": "Views\\Home\\CreateQuest.cshtml",
+      "FilePath": "/Users/stevenmiyauchi/CSharp/FullWebApp/Views/Home/CreateMessage.cshtml",
+      "TargetPath": "Views\\Home\\CreateMessage.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20538,6 +20538,11 @@
     {
       "FilePath": "/Users/stevenmiyauchi/CSharp/FullWebApp/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/stevenmiyauchi/CSharp/FullWebApp/Views/Home/MessageSubmission.cshtml",
+      "TargetPath": "Views\\Home\\MessageSubmission.cshtml",
       "FileKind": "mvc"
     },
     {
