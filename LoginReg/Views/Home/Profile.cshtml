@@ -1,0 +1,23 @@
+@model LoginReg.Models.RegForm
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="/">Logout</a>
+    </div>
+    <h1>Welcome, @Model.Name</h1>
+    <p>You're from @Model.Location</p>
+    <p>Your Skill level is: @Model.Skills</p>
+    <p>Your Total Experience is @Model.TotalExperience</p>
+    <h2>List of All People</h2>
+    <ol>
+        <li>@Model.Name</li>
+    </ol>
+</body>
+</html>
