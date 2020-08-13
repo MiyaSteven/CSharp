@@ -4,6 +4,26 @@
         <p>Using the SportsORM, complete all the following queries and show their results on Level2.cshtml.</p>
         <ol>
             <li>...all teams in the Atlantic Soccer Conference</li>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>All Women Leagues</h3>
+                            <table class="table table-striped">
+                                <tr>
+                                    <th>League Name</th>
+                                    <th>League Sport</th>
+                                </tr>
+                                @foreach(var w in ViewBag.WomensLeagues)
+                                {
+                                    <tr>
+                                        <td>@w.Name</td>
+                                        <td>@w.Sport</td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div> 
             <li>...all (current) players on the Boston Penguins (Hint: Boston is the Location, Penguins is the TeamName)</li>
             <li>...all (current) players in the International Collegiate Baseball Conference</li>
             <li>...all (current) players in the American Conference of Amateur Football with last name "Lopez"</li>

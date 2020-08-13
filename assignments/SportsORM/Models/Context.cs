@@ -9,13 +9,12 @@ namespace SportsORM.Models
     {
         public Context(DbContextOptions options) : base(options) { }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options) 
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite("Data Source=SportsORM.db");
-
-        public DbSet<League> Leagues {get;set;}
-        public DbSet<Team> Teams {get;set;}
-        public DbSet<Player> Players {get;set;}
-        public DbSet<PlayerTeam> PlayerTeams {get;set;}
+        public DbSet<League> Leagues { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Player> Players { get; set; }
+        public DbSet<PlayerTeam> PlayerTeams { get; set; }
 
     }
 }
