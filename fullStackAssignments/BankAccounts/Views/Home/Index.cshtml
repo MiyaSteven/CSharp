@@ -1,0 +1,78 @@
+@using BankAccounts.Models
+@model IndexWrapper
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to RegUser</h1>
+        <div class="row">
+            <div class="col-sm-10 offset-sm-1">
+                <table class="col-sm-12 table-dark">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Confirm Password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(RegUser person in Model.TableModel)
+                        {
+                            <tr>
+                                <td>@person.RegUserId</td>
+                                <td><a href="/user/@person.RegUserId">@person.FirstName</a></td>
+                                <td>@person.LastName</td>
+                                <td>@person.Email</td>
+                                <td>@person.Password</td>
+                                <td>placeholder</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <form asp-action="RegisterUser" asp-controller="Home" method="post">
+                <div class="form-group row">
+                    <span class="col-sm-8 offset-sm-4 text-danger" asp-validation-for="FormModel.FirstName"></span>
+                    <label asp-for="FormModel.FirstName" class="col-sm-4"></label>
+                    <input asp-for="FormModel.FirstName" class="col-sm-8 form-control">
+                </div>
+                <div class="form-group row">
+                    <span class="col-sm-8 offset-sm-4 text-danger" asp-validation-for="FormModel.LastName"></span>
+                    <label asp-for="FormModel.LastName" class="col-sm-4"></label>
+                    <input asp-for="FormModel.LastName" class="col-sm-8 form-control">
+                </div>
+                <div class="form-group row">
+                    <span class="col-sm-8 offset-sm-4 text-danger" asp-validation-for="FormModel.Email"></span>
+                    <label asp-for="FormModel.Email" class="col-sm-4"></label>
+                    <input asp-for="FormModel.Email">
+                </div>
+                <div class="form-group row">
+                    <span class="col-sm-8 offset-sm-4 text-danger" asp-validation-for="FormModel.Password"></span>
+                    <label asp-for="FormModel.Password" class="col-sm-4"></label>
+                    <input asp-for="FormModel.Password" class="col-sm-8 form-control">
+                </div>
+                <div class="form-group row">
+                    <span class="col-sm-8 offset-sm-4 text-danger"></span>
+                    <label for="FormModel.Password" class="col-sm-4">Confirm Password</label>
+                    <input type="password" class="col-sm-8 form-control">
+                </div>
+                <div class="form-group row">
+                    <input type="submit" value="Submit" class="col-sm-4 offset-sm-4 btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
