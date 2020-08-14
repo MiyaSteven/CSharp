@@ -1,0 +1,38 @@
+@using BankAccounts.Models
+@model IndexWrapper
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update Your Account</h1>
+    <div>
+        <form asp-action="UpdateRegUser" asp-controller="Home" method="post">
+            <span asp-validation-for="FormModel.FirstName"></span>
+            <label asp-for="FormModel.FirstName"></label>
+            <input asp-for="FormModel.FirstName">
+            <br>
+            <span asp-validation-for="FormModel.LastName"></span>
+            <label asp-for="FormModel.LastName"></label>
+            <input asp-for="FormModel.LastName">
+            <br>
+            <span asp-validation-for="FormModel.Email"></span>
+            <label asp-for="FormModel.Email"></label>
+            <input asp-for="FormModel.Email">
+            <br>
+            <span asp-validation-for="FormModel.Password"></span>
+            <label asp-for="FormModel.Password"></label>
+            <input asp-for="FormModel.Password">
+            <br>
+            <label>Confirm Password: </label>
+            <input type="password" name="confirmPassword">
+            <br>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</body>
+</html>
