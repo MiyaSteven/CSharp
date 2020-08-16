@@ -25,6 +25,7 @@ namespace CRUDelicious.Controllers
             WMod.TableModel = DbContext.Users.ToList();
             return View("Index", WMod);
         }
+
         [HttpGet("user/{id}")]
         public IActionResult SingleUser(int? id)
         {
