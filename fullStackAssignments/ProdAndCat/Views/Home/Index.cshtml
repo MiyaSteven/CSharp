@@ -1,0 +1,36 @@
+@using ProdAndCat.Models
+@model List<Product>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Product Category</th>
+                    <th>Number of Category Associations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(Product product in Model)
+                {
+                    <tr>
+                        <td>@product.ProductId</td>
+                        <td><a href="/products/@product.ProductId/addvisit">@product.Name</a></td>
+                        <td>@product.ProdCategory.Name</td>
+                        <td>@product.ProdAndCatAssoc.Count</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>    
+</body>
+</html>

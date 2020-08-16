@@ -1,0 +1,31 @@
+@model ProdAndCat.Models.Product
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create Your Product!</h1>
+        <form asp-action="CreateProduct" asp-controller="Home" method="post">
+        <span asp-validation-for="Name"></span>
+        <label asp-for="Name"></label>
+        <input asp-for="Name">
+        <br>
+        <span asp-validation-for="Description"></span>
+        <label asp-for="Description"></label>
+        <input asp-for="Description">
+        <br>
+        <span asp-validation-for="Price"></span>
+        <label asp-for="Price"></label>
+        <input asp-for="Price">
+        <br>
+        <span asp-validation-for="ProdAndCatAssoc"></span>
+        <label asp-for="ProdAndCatAssoc"></label>
+        <input asp-for="ProdAndCatAssoc">
+        <br>
+        <input type="submit" value="Submit Product">
+    </form>
+</body>
+</html>
