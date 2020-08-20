@@ -115,9 +115,6 @@ namespace TheWall.Controllers
             {
                 return RedirectToAction("LoginReg");
             }
-
-            FromForm.Message.UserId = (int)LoggedId;
-
             if (ModelState.IsValid)
             {
                 DbContext.Add(FromForm.Message);
@@ -131,7 +128,7 @@ namespace TheWall.Controllers
         }
 
         [HttpPost("homepage/comment/post")]
-        public IActionResult CreateComment(int MessageId)
+        public IActionResult CreateComment(int MessageId, HomepageWrapper FromForm)
         {
             int? LoggedId = HttpContext.Session.GetInt32("UserId");
             if (LoggedId == null)
@@ -139,11 +136,9 @@ namespace TheWall.Controllers
                 return RedirectToAction("LoginReg");
             }
 
-
             if (ModelState.IsValid)
             {
-                // To Do: Get Comments To Show Up on HomePage Upon Submission
-                DbContext.Add(comment);
+                DbContext.Add(FromForm.Comment);
                 DbContext.SaveChanges();
                 return RedirectToAction("Homepage");
             }

@@ -224,7 +224,6 @@ namespace WeddingPlanner.Controllers
             }
         }
 
-
         [HttpGet("weddings/{WeddingId}/rsvp")]
         public RedirectToActionResult RSVP(int WeddingId)
         {
