@@ -9,9 +9,6 @@ namespace TheWall.Models
     {
         [Key]
         public int CommentId { get; set; }
-
-        [Required(ErrorMessage = "Nothing to post")]
-        [Display(Name = "Post a Comment: ")]
         public string CommentText { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }

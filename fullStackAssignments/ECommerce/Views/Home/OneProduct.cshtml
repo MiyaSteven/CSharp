@@ -1,0 +1,78 @@
+@model OneProductWrapper
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10">
+                <h1>@Model.Product.ProductName</h1>
+            </div>
+            <div class="col-sm-2">
+                <a href="/products">Go Back</a>
+            </div>
+        </div>
+        <div class="row">
+            <ul>
+                <li>Product Name: @Model.Product.ProductName</li>
+                <li>Customers: 
+                    <ul>
+                        @foreach(Order order in Model.Product.Orders)
+                        {
+                            <li>@order.Customer.CustomerName</li>
+                        }
+                    </ul>
+                </li>
+                <li>Release Date: @Model.Product.ReleaseDate.ToString("MMMM d, yyyy")</li>
+                @if(Model.Product.Description != null)
+                {
+                    <li>Description: @Model.Product.Description</li>
+                }
+                <li>Last Updated: @Model.Product.UpdatedAt.ToString("MMMM, d yyyy H:mm tt") </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Add Order</h3>
+            </div>
+            <div class="col-sm-12">
+                <form asp-action="AddOrder" asp-controller="Home" asp-method="post">
+                    <div class="form-group row">
+                        <label asp-for="AddOrderForm.CustomerId" class="col-sm-4"></label>
+                        <select asp-for="AddOrderForm.CustomerId" class="col-sm-8 form-control">
+                            @foreach(Customer customer in Model.AllCustomers)
+                            {
+                                <option value="@customer.CustomerId">@customer.CustomerName</option>
+                            }
+                        </select>
+                        <label asp-for="AddOrderForm.OrderQuantity" class="col-sm-4"></label>
+                        <select asp-for="AddOrderForm.OrderQuantity" class="col-sm-8 form-control">
+                            @for(int i=1;i<=Model.Product.Quantity;i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <input type="submit" value="Add Order" class="col-sm-4 offset-sm-4 btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+        @if(Model.LoggedId == Model.Product.UserId)
+        {
+            <div class="row">
+                <a asp-action="EditProduct" asp-controller="Home" asp-route-id="@Model.Product.ProductId">Edit</a> |
+                <a asp-action="DeleteProduct" asp-controller="Home" asp-route-id="@Model.Product.ProductId">Delete</a>
+            </div>
+        }
+
+    </div>
+</body>
+</html>
