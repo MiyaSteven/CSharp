@@ -38,7 +38,8 @@
                                 <td>
                                     @if(wedding.UserId==Model.LoggedUser.UserId)
                                     {
-                                        <a href="/weddings/@wedding.WeddingId/edit"><button class="btn btn-primary">Edit</button></a> <a href="/weddings/@wedding.WeddingId/delete"><button class="btn btn-danger">Delete</button></a>
+                                        <a href="/weddings/@wedding.WeddingId/edit"><button class="btn btn-primary">Edit</button></a> 
+                                        <a href="/weddings/@wedding.WeddingId/delete"><button class="btn btn-danger">Delete</button></a>
                                     }
                                     else if(wedding.GuestsAttending.Any(r => r.UserId == Model.LoggedUser.UserId))
                                     {

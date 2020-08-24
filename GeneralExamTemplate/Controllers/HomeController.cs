@@ -1,21 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
-using WeddingPlanner.Models;
+using GeneralExamTemplate.Models;
 
-namespace WeddingPlanner.Controllers
+namespace GeneralExamTemplate.Controllers
 {
     public class HomeController : Controller
     {
-        private MyContext dbContext;
+        private MyContext DbContext;
 
         public HomeController(MyContext context)
         {
-            dbContext = context;
+            DbContext = context;
         }
 
         [HttpGet("")]
@@ -30,7 +31,7 @@ namespace WeddingPlanner.Controllers
             if (ModelState.IsValid)
             {
                 // Unique validation
-                if (dbContext.Users.Any(u => u.Email == FromForm.Register.Email))
+                if (DbContext.DbUsers.Any(u => u.Email == FromForm.Register.Email))
                 {
                     ModelState.AddModelError("Register.Email", "Already registered? Please Log In.");
                     return LogReg();
@@ -38,8 +39,8 @@ namespace WeddingPlanner.Controllers
                 PasswordHasher<User> Hasher = new PasswordHasher<User>();
                 FromForm.Register.Password = Hasher.HashPassword(FromForm.Register, FromForm.Register.Password);
 
-                dbContext.Add(FromForm.Register);
-                dbContext.SaveChanges();
+                DbContext.Add(FromForm.Register);
+                DbContext.SaveChanges();
 
 
                 HttpContext.Session.SetInt32("UserId", FromForm.Register.UserId);
@@ -56,7 +57,7 @@ namespace WeddingPlanner.Controllers
         {
             if (ModelState.IsValid)
             {
-                User InDb = dbContext.Users.FirstOrDefault(u => u.Email == FromForm.Login.Email);
+                User InDb = DbContext.DbUsers.FirstOrDefault(u => u.Email == FromForm.Login.Email);
 
                 if (InDb == null)
                 {
@@ -98,41 +99,40 @@ namespace WeddingPlanner.Controllers
                 return RedirectToAction("LogReg");
             }
 
-            DashboardWrapper WMod = new DashboardWrapper()
+            GroupWrapper WMod = new GroupWrapper()
             {
-                AllWeddings = dbContext.Weddings
+                AllGroups = DbContext.DbGroups
                     .Include(w => w.Planner)
                     .Include(w => w.GuestsAttending)
                     .ThenInclude(r => r.Guest)
                     .Where(w => w.Date > DateTime.Today)
                     .ToList(),
-                LoggedUser = dbContext.Users
+                LoggedUser = DbContext.DbUsers
                     .FirstOrDefault(u => u.UserId == (int)LoggedId)
             };
             return View("Dashboard", WMod);
         }
 
-        [HttpGet("weddings/new")]
-        public IActionResult NewWedding()
+        [HttpGet("groups/new")]
+        public IActionResult NewGroup()
         {
             int? LoggedId = HttpContext.Session.GetInt32("UserId");
             if (LoggedId == null)
             {
                 return RedirectToAction("LogReg");
             }
-
-            return View("NewWedding");
+            return View("NewGroup");
         }
 
-        [HttpPost("weddings/create")]
-        public IActionResult CreateWedding(Wedding FromForm)
+        [HttpPost("groups/create")]
+        public IActionResult CreateGroup(Group FromForm)
         {
             int? LoggedId = HttpContext.Session.GetInt32("UserId");
             if (LoggedId == null)
             {
                 return RedirectToAction("LogReg");
             }
-            // Attach the user who planned the wedding to the object.
+            // Attach the user who planned the group to the object.
             FromForm.UserId = (int)LoggedId;
 
             if (ModelState.IsValid)
@@ -140,22 +140,21 @@ namespace WeddingPlanner.Controllers
                 if (FromForm.Date < DateTime.Today)
                 {
                     ModelState.AddModelError("Date", "No time travel!");
-                    return NewWedding();
+                    return NewGroup();
                 }
 
-
-                dbContext.Add(FromForm);
-                dbContext.SaveChanges();
+                DbContext.Add(FromForm);
+                DbContext.SaveChanges();
                 return RedirectToAction("Dashboard");
             }
             else
             {
-                return NewWedding();
+                return NewGroup();
             }
         }
 
-        [HttpGet("weddings/{WeddingId}")]
-        public IActionResult WeddingDetail(int WeddingId)
+        [HttpGet("groups/{GroupId}")]
+        public IActionResult GroupDetail(int GroupId)
         {
             int? LoggedId = HttpContext.Session.GetInt32("UserId");
             if (LoggedId == null)
@@ -163,21 +162,82 @@ namespace WeddingPlanner.Controllers
                 return RedirectToAction("LogReg");
             }
 
-            Wedding ToPage = dbContext.Weddings
+            GroupWrapper GMod = new GroupWrapper();
+
+            GMod.AllGroups = DbContext.DbGroups
+                .Include(w => w.Planner)
+                .Include(c => c.Comments)
+                // .Include(s => s.SignUpId)
+                // .Include(t => t.Date)
+                // .Include(t => t.Time)
                 .Include(w => w.GuestsAttending)
                 .ThenInclude(r => r.Guest)
-                .FirstOrDefault(w => w.WeddingId == WeddingId);
+                .Where(w => w.GroupId == GroupId)
+                .ToList();
 
-            if (ToPage == null)
+            GMod.AllUsers = DbContext.DbUsers
+                .ToList();
+
+            if (GMod == null)
             {
                 return RedirectToAction("Dashboard");
             }
-
-            return View("WeddingDetail", ToPage);
+            return View("GroupDetail", GMod);
         }
 
-        [HttpGet("weddings/{WeddingId}/edit")]
-        public IActionResult EditWedding(int WeddingId)
+        [HttpPost("groups/{GroupId}/comment")]
+        public IActionResult PostComment(int GroupId)
+        {
+            int? LoggedUser = HttpContext.Session.GetInt32("UserId");
+            if (LoggedUser == null)
+            {
+                return RedirectToAction("LogReg");
+            }
+            if (ModelState.IsValid)
+            {
+                string response = Request.Form["CommentText"];
+                Comment comment = new Comment();
+                comment.GroupId = GroupId;
+                comment.UserId = (int)LoggedUser;
+                comment.CommentText = response;
+                DbContext.Add(comment);
+                DbContext.SaveChanges();
+                return RedirectToAction("GroupDetail");
+            }
+            return Dashboard();
+        }
+
+        // [HttpPost("/groups/{GroupId}/signup")]
+        // public IActionResult SignUp(int GroupId)
+        // {
+        //     int? LoggedId = HttpContext.Session.GetInt32("UserId");
+        //     if (LoggedId == null)
+        //     {
+        //         return RedirectToAction("LogReg");
+        //     }
+
+        //     if (!DbContext.DbGroups.Any(s => s.GroupId == GroupId))
+        //     {
+        //         return RedirectToAction("Dashboard");
+        //     }
+
+        //     if (ModelState.IsValid)
+        //     {
+        //         string response = Request.Form["SignUpTimeLength"];
+        //         SignUp user = new SignUp();
+        //         user.GroupId = GroupId;
+        //         user.UserId = (int)LoggedId;
+        //         user.SignUpTimeLength = response;
+        //         DbContext.Add(user);
+        //         DbContext.SaveChanges();
+
+        //         return RedirectToAction("GroupDetail");
+        //     }
+        //     return Dashboard();
+        // }
+
+        [HttpGet("groups/{GroupId}/edit")]
+        public IActionResult EditGroup(int GroupId)
         {
             int? LoggedId = HttpContext.Session.GetInt32("UserId");
             if (LoggedId == null)
@@ -185,18 +245,18 @@ namespace WeddingPlanner.Controllers
                 return RedirectToAction("LogReg");
             }
 
-            Wedding ToEdit = dbContext.Weddings.FirstOrDefault(w => w.WeddingId == WeddingId);
+            Group ToEdit = DbContext.DbGroups.FirstOrDefault(w => w.GroupId == GroupId);
 
             if (ToEdit == null || ToEdit.UserId != (int)LoggedId)
             {
                 return RedirectToAction("Dashboard");
             }
 
-            return View("EditWedding", ToEdit);
+            return View("EditGroup", ToEdit);
         }
 
-        [HttpPost("weddings/{WeddingId}/update")]
-        public IActionResult UpdateWedding(int WeddingId, Wedding FromForm)
+        [HttpPost("groups/{GroupId}/update")]
+        public IActionResult UpdateGroup(int GroupId, Group FromForm)
         {
             int? LoggedId = HttpContext.Session.GetInt32("UserId");
             if (LoggedId == null)
@@ -204,36 +264,36 @@ namespace WeddingPlanner.Controllers
                 return RedirectToAction("LogReg");
             }
 
-            if (!dbContext.Weddings.Any(w => w.WeddingId == WeddingId && w.UserId == (int)LoggedId))
+            if (!DbContext.DbGroups.Any(w => w.GroupId == GroupId && w.UserId == (int)LoggedId))
             {
                 return RedirectToAction("Dashboard");
             }
             FromForm.UserId = (int)LoggedId;
             if (ModelState.IsValid)
             {
-                FromForm.WeddingId = WeddingId;
-                dbContext.Update(FromForm);
-                dbContext.Entry(FromForm).Property("CreatedAt").IsModified = false;
-                dbContext.SaveChanges();
+                FromForm.GroupId = GroupId;
+                DbContext.Update(FromForm);
+                DbContext.Entry(FromForm).Property("CreatedAt").IsModified = false;
+                DbContext.SaveChanges();
                 return RedirectToAction("Dashboard");
             }
             else
             {
-                return EditWedding(WeddingId);
+                return EditGroup(GroupId);
             }
         }
 
-        [HttpGet("weddings/{WeddingId}/rsvp")]
-        public RedirectToActionResult RSVP(int WeddingId)
+        [HttpGet("groups/{GroupId}/rsvp")]
+        public RedirectToActionResult RSVP(int GroupId)
         {
             int? LoggedId = HttpContext.Session.GetInt32("UserId");
             if (LoggedId == null)
             {
                 return RedirectToAction("LogReg");
             }
-            Wedding ToJoin = dbContext.Weddings
+            Group ToJoin = DbContext.DbGroups
                 .Include(w => w.GuestsAttending)
-                .FirstOrDefault(w => w.WeddingId == WeddingId);
+                .FirstOrDefault(w => w.GroupId == GroupId);
 
             if (ToJoin == null || ToJoin.UserId == (int)LoggedId || ToJoin.GuestsAttending.Any(r => r.UserId == (int)LoggedId))
             {
@@ -244,25 +304,25 @@ namespace WeddingPlanner.Controllers
                 RSVP NewRsvp = new RSVP()
                 {
                     UserId = (int)LoggedId,
-                    WeddingId = WeddingId
+                    GroupId = GroupId
                 };
-                dbContext.Add(NewRsvp);
-                dbContext.SaveChanges();
+                DbContext.Add(NewRsvp);
+                DbContext.SaveChanges();
                 return RedirectToAction("Dashboard");
             }
         }
 
-        [HttpGet("weddings/{WeddingId}/unrsvp")]
-        public RedirectToActionResult UnRSVP(int WeddingId)
+        [HttpGet("groups/{GroupId}/unrsvp")]
+        public RedirectToActionResult UnRSVP(int GroupId)
         {
             int? LoggedId = HttpContext.Session.GetInt32("UserId");
             if (LoggedId == null)
             {
                 return RedirectToAction("LogReg");
             }
-            Wedding ToLeave = dbContext.Weddings
+            Group ToLeave = DbContext.DbGroups
                 .Include(w => w.GuestsAttending)
-                .FirstOrDefault(w => w.WeddingId == WeddingId);
+                .FirstOrDefault(w => w.GroupId == GroupId);
 
             if (ToLeave == null || !ToLeave.GuestsAttending.Any(r => r.UserId == (int)LoggedId))
             {
@@ -270,16 +330,16 @@ namespace WeddingPlanner.Controllers
             }
             else
             {
-                RSVP ToRemove = dbContext.RSVPs.FirstOrDefault(r => r.UserId == (int)LoggedId && r.WeddingId == WeddingId);
-                dbContext.Remove(ToRemove);
-                dbContext.SaveChanges();
+                RSVP ToRemove = DbContext.DbRSVPs.FirstOrDefault(r => r.UserId == (int)LoggedId && r.GroupId == GroupId);
+                DbContext.Remove(ToRemove);
+                DbContext.SaveChanges();
 
                 return RedirectToAction("Dashboard");
             }
         }
 
-        [HttpGet("weddings/{WeddingId}/delete")]
-        public RedirectToActionResult DeleteWedding(int WeddingId)
+        [HttpGet("groups/{GroupId}/delete")]
+        public RedirectToActionResult DeleteGroup(int GroupId)
         {
             int? LoggedId = HttpContext.Session.GetInt32("UserId");
             if (LoggedId == null)
@@ -287,16 +347,16 @@ namespace WeddingPlanner.Controllers
                 return RedirectToAction("LogReg");
             }
 
-            Wedding ToDelete = dbContext.Weddings
-                .FirstOrDefault(w => w.WeddingId == WeddingId);
+            Group ToDelete = DbContext.DbGroups
+                .FirstOrDefault(w => w.GroupId == GroupId);
 
             if (ToDelete == null || ToDelete.UserId != (int)LoggedId)
             {
                 return RedirectToAction("Dashboard");
             }
 
-            dbContext.Remove(ToDelete);
-            dbContext.SaveChanges();
+            DbContext.Remove(ToDelete);
+            DbContext.SaveChanges();
             return RedirectToAction("Dashboard");
         }
     }
